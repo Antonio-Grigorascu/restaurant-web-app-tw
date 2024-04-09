@@ -861,21 +861,18 @@ footer h1, h2, h4{
     background-color: white;
 }
 
-.menu-img-back{
-    width: 430px;
-    height:60vh;
-    border-radius:10%;
-    z-index:0;
-    filter:grayscale(50%);
-}
+
 
 .menu-img-front{
-    width:450px;
-    height:70vh;
-    border-radius:10%;
-    position: absolute;
+    width:375px;
+    height:550px;
+    border-radius:60px;
+    position: static;
     transition-duration: 0.5s;
+    object-fit: contain;
+    
 }
+
 
 
 .menu-img-front:hover{
@@ -884,19 +881,23 @@ footer h1, h2, h4{
     transition-timing-function: ease-out;
 }
 
+#pizza{
+    padding-left: 2vw;
+}
+
 #pasta-img{
     top:90vh;
-    left: 12%;
+    margin-left: 7vw;
 }
 
 #pizza-img{
     top: 180vh; /* section height (90vh) + pasta-img top */
-    right: 8%;
+    margin-right: 7vw;
 }
 
 #platter-img{
     top: 270vh; /* section height (90vh) + pizza-img top */
-    left: 12%;
+    margin-left: 7vw;
 }
 
 .menu-item .sp{
@@ -1011,9 +1012,7 @@ footer h1, h2, h4{
 /* Menu responsive */
 
 @media only screen and (max-width: 1200px) {
-    .menu-img-back {
-        display: none;
-    }
+    
 
     .menu-img-front {
         width: 30vw;
