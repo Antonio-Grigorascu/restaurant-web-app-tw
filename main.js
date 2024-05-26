@@ -26,6 +26,21 @@ document.addEventListener("DOMContentLoaded", function() {
             guestNumberID.value = this.dataset.seats;
         });
     });
+
+
+    const clearButton = document.getElementById('clear-reservation');
+    clearButton.addEventListener('click', function() {
+        localStorage.removeItem('form');
+        document.getElementById('reservation-message').textContent = '';
+        hideClearButtonAndMessage();
+        history.pushState({}, document.title, window.location.href); // reloads the page so the reservation-message disappears
+    });
+
+    const storedData = localStorage.getItem('form');
+    if (!storedData) {
+        hideClearButtonAndMessage();
+    }
+
 });
 
 function validateForm() {
@@ -63,5 +78,54 @@ function validateForm() {
     return true;
 }
 
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
 
+
+
+    e.preventDefault();
+    const fd = new FormData(form);
+
+    const obj = Object.fromEntries(fd);
+    const json = JSON.stringify(obj);
+    localStorage.setItem('form',json);
+    displayReservationMessage();
+
+
+});
+
+
+
+function displayReservationMessage() {
+    const storedData = localStorage.getItem('form');
+    if (storedData) {
+        const reservation = JSON.parse(storedData);
+        const message = `
+                You have a reservation for ${reservation.name} at table ${reservation.table_id} on ${reservation.date} at ${reservation.time}\n
+            `;
+        const messageDiv = document.getElementById('reservation-message');
+        messageDiv.textContent = message;
+        showClearButtonAndMessage();
+    }
+    else{
+        hideClearButtonAndMessage();
+    }
+}
+
+function showClearButtonAndMessage() {
+    const clearButton = document.getElementById('clear-reservation');
+    const messageDiv = document.getElementById('reservation-message');
+    clearButton.style.display = 'block';
+    messageDiv.style.display = 'block';
+}
+
+
+function hideClearButtonAndMessage() {
+    const clearButton = document.getElementById('clear-reservation');
+    const messageDiv = document.getElementById('reservation-message');
+    clearButton.style.display = 'none';
+    messageDiv.style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', displayReservationMessage);
 
