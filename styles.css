@@ -10,6 +10,8 @@
     --some-orange: #ff8c00;
     --some-darker-orange: #e07d03;
     --pink-white: #FFFAF0;
+    --select-green: #75b590;
+    --select-red: #b23a48;
 }
 
 ::selection {
@@ -60,6 +62,43 @@ nav a{
     display: flex;
     align-items: center;
 }
+
+
+
+#reservation-button{
+    background-color: var(--some-orange);
+    height:8vh;
+    width:10vw;
+    border: none;
+    color:white;
+    border-radius: 30px;
+    z-index:3;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+#reservation-button:hover{
+    background-color: transparent;
+    border: 4px solid var(--some-orange);
+    color: var(--some-orange);
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+
+#reservation-button{
+    transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+
+
 
 .sidebar{
     position: fixed;
@@ -529,6 +568,17 @@ section h1 {
     
 }
 
+#reservation-button{
+    background-color: var(--some-orange);
+    height:8vh;
+    width:10vw;
+    border: none;
+    color:white;
+    border-radius: 30px;
+    z-index:3;
+    text-align: center;
+}
+
 
 footer{
     width: 100%;
@@ -624,6 +674,8 @@ footer h1, h2, h4{
 
     #reservation-button{
         margin-right: 70px;
+
+
     }
 
     #logo{
@@ -1249,4 +1301,118 @@ footer h1, h2, h4{
     .page-title img{
         display: none;
     }
+}
+
+/*  RESERVATIONS PAGE  */
+
+#reservation-body {
+    font-family: Arial, sans-serif;
+    background-image: url("wp4289147-italian-food-wallpapers.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130vh;
+}
+
+#reservation-body::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 130vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+
+}
+
+
+
+.reservation-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    z-index:1;
+}
+
+#reservation-h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+small.guest-note {
+    display: block;
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 0.875rem;
+}
+
+#return-home{
+    text-decoration: none;
+    color: grey;
+}
+
+#return-home:hover{
+    color:black;
+}
+
+.restaurant-map {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background-color: #ffffff ;
+    background-size: cover;
+    border-radius: 10px;
+    margin-left: 50px;
+    z-index:1;
+}
+
+.table {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #000000;
+}
+
+.table svg {
+    width: 100%;
+    height: 100%;
+}
+
+.table span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 2px 5px;
+    font-size: 12px;
+}
+
+.table.selected rect {
+    fill: var(--select-green);
 }
