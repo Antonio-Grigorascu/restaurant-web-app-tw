@@ -3,7 +3,7 @@
 
 <html lang="en">
   <head>
-    <title>Tehnici Web</title>
+    <title>Fresco</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="styles.css" rel="stylesheet" />
@@ -219,7 +219,18 @@
       <h1>Call for All Your​ Reservations</h1>
       <h2>+123-456-1010</h2>
       <h4>Grigorașcu Andrei-Antonio</h4>
+      <div id="google_translate_element"></div>
     </footer>
     <script src="main.js"></script>
+
+    <script>
+      function googleTranslateElementInit(){
+        new google.translate.TranslateElement(
+          {pageLanguage: 'en'},
+          'google_translate_element'
+        );
+      }
+    </script>
+    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </body>
 </html>

@@ -12,6 +12,8 @@
             href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
             rel="stylesheet"
     />
+
+
 </head>
 <body>
 <header>
@@ -62,34 +64,34 @@
 <main id="reservation-body">
     <div class="reservation-container">
         <h1 id="reservation-h1">Make a Reservation</h1>
-        <form id="reservation-form" onsubmit="return validateForm()">
+        <form id="reservation-form" onsubmit="return validateForm()" autocomplete="off">
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}">
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="date">Date:</label>
-                <input type="date" id="date" name="date" required>
+                <input type="date" id="date" name="date" required autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="time">Time:</label>
-                <input type="time" id="time" name="time" required>
+                <input type="time" id="time" name="time" required autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="guests">Number of Guests:</label>
-                <input type="number" id="guests" name="guests" required min="1">
+                <input type="number" id="guests" name="guests" required min="1" autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="table-id">Table Number:</label>
-                <input type="number" id="table-id" name="table_id" required min="1" max="8">
+                <input type="number" id="table-id" name="table_id" required min="1" max="8" autocomplete="off">
             </div>
 
             <button type="submit" id="reservation-send">Reserve</button>
@@ -162,7 +164,18 @@
     <h1>Call for All Your Reservations</h1>
     <h2>+123-456-1010</h2>
     <h4>Grigorașcu Andrei-Antonio</h4>
+    <div id="google_translate_element"></div>
 </footer>
 <script src="main.js"></script>
+<script>
+    function googleTranslateElementInit(){
+        new google.translate.TranslateElement(
+            {pageLanguage: 'en'},
+            'google_translate_element'
+        );
+    }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
