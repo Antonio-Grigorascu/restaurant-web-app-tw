@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Menu</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <img src="images/logo.png" alt="logo" id="logo" />
+      <div class="left-container">
+        <div class="log">
+          <div class="login-link" style="display: block;">
+            <a href="login.html">Login</a>
+          </div>
+
+          <div class="logout-link" style="display: block;">
+            <a href="/logout">Logout</a>
+          </div>
+        </div>
+        <nav>
+          <ul class="sidebar">
+            <li onClick="hideSidebar()">
+              <a
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24"
+                  viewBox="0 -960 960 960"
+                  width="24"
+                >
+                  <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                  /></svg
+              ></a>
+            </li>
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <ul>
+            <li class="hide"><a href="index.html" id="home-link">Home</a></li>
+            <li class="hide"><a href="menu.html">Menu</a></li>
+            <li class="hide"><a href="contact.html">Contact</a></li>
+            <!-- Menu Icon -->
+            <li class="show" onClick="showSidebar()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 -960 960 960"
+                width="24"
+              >
+                <path
+                  d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+                />
+              </svg>
+            </li>
+          </ul>
+        </nav>
+        <a href="reservation.html" id="reservation-button">Reservation</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="page-title" id="menu-title">
+        <div class="title-heading">
+          <h1>Menu</h1>
+          <img src="images/thing.png" alt="thing" />
+        </div>
+      </div>
+
+      <section id="pasta" class="menu-section">
+       
+          <img
+            src="images/penne.png"
+            alt="Penne Carbonara with Bacon"
+            class="menu-img-front"
+            id="pasta-img"
+          />
+        </div>
+
+        <div class="menu-page">
+          <div class="menu-page-title">
+            <h1>Pasta</h1>
+          </div>
+
+          <div class="menu-item">
+            <div class="sp">
+              <h2>Whole Grain Pasta</h2>
+              <p>
+                Whole Grain Pasta, Roasted Eggplant Spread, Marinated Tomatoes,
+                Garlic, Fresh Basil
+              </p>
+            </div>
+
+            <h2>$25.00</h2>
+          </div>
+
+          <div class="menu-item">
+            <div class="sp">
+              <h2>Tortellini Gorgonzola</h2>
+              <p>
+                Tortellini Pasta, Gorgonzola Cheese, Roasted Eggplant Spread,
+                Marinated Tomatoes, Garlic, Fresh Basil
+              </p>
+            </div>
+            <h2>$18.50</h2>
+          </div>
+
+          <div class="menu-item">
+            <div class="sp">
+              <h2>Rigatoni Zuccati</h2>
+              <p>
+                Rigatoni Pasta, Zucchini, Cherry Tomatoes, Roasted Eggplant
+                Spread, Garlic, Olive Oil, Fresh Basil, Parmesan Cheese
+              </p>
+            </div>
+            <h2>$22.50</h2>
+          </div>
+
+          <div class="menu-item">
+            <div class="sp">
+              <h2>Spaghetti Marinara</h2>
+              <p>
+                Spaghetti Pasta, Marinara Sauce, Roasted Eggplant Spread,
+                Marinated Tomatoes, Garlic, Fresh Basil
+              </p>
+            </div>
+            <h2>$21.50</h2>
+          </div>
+        </div>
+      </section>
+
+      <section id="pizza" class="menu-section">
+        <div class="food-display">
+         
+          <img
+            src="images/pizza3.png"
+            alt="Penne Carbonara with Bacon"
+            class="menu-img-front"
+            id="pizza-img"
+          />
+        </div>
+
+        <div class="menu-page">
+          <div class="menu-page-title">
+            <h1>Pizza</h1>
+          </div>
+
+          <div class="menu-item">
+            <div class="sp">
+              <h2>BBQ Special Pizza</h2>
+              <p>
+                Roasted Eggplant Spread, Marinated Tomatoes, Garlic, Fresh
+                Basil, Pizza Dough, BBQ Sauce, Mozzarella Cheese, BBQ Chicken,
+                Red Onion, Cilantro
+              </p>
+            </div>
+
+            <h2>$12.50</h2>
+          </div>
+
+          <div class="menu-item">
+            <div class="sp">
+              <h2>Spe. Cheesy Cheese</h2>
+              <p>
+                Roasted Eggplant Spread, Marinated Tomatoes, Garlic, Fresh
+                Basil, Pizza Dough, Tomato Sauce, Mozzarella Cheese, Cheddar
+                Cheese, Parmesan Cheese
+              </p>
+            </div>
+            <h2>$12.50</h2>
+          </div>
+
+          <div class="menu-item">
+            <div class="sp">
+              <h2>Mushroom Chilly Pizza</h2>
+              <p>
+                Roasted Eggplant Spread, Marinated Tomatoes, Garlic, Fresh
+                Basil, Pizza Dough, Tomato Sauce, Mozzarella Cheese, Mushrooms,
+                Chili Flakes
+              </p>
+            </div>
+            <h2>$12.50</h2>
+          </div>
+
+          <div class="menu-item">
+            <div class="sp">
+              <h2>Chicken BBQ Special</h2>
+              <p>
+                Roasted Eggplant Spread, Marinated Tomatoes, Garlic, Fresh
+                Basil, Pizza Dough, BBQ Sauce, Mozzarella Cheese, BBQ Chicken,
+                Red Onion, Cilantro
+              </p>
+            </div>
+            <h2>$25.50</h2>
+          </div>
+        </div>
+      </section>
+
+      <section id="platter" class="menu-section">
+        <div class="food-display">
+   
+          <img
+            src="images/platter-img.jpg"
+            alt="Penne Carbonara with Bacon"
+            class="menu-img-front"
+            id="platter-img"
+          />
+        </div>
+
+        <div class="menu-page">
+          <div class="menu-page-title">
+            <h1>Platter</h1>
+          </div>
+
+          <div class="menu-item">
+            <div class="sp">
+              <h2>Sautéed Spinach</h2>
+              <p>Fresh Spinach, Garlic, Olive Oil, Lemon Juice, Salt, Pepper</p>
+            </div>
+
+            <h2>$12.50</h2>
+          </div>
+
+          <div class="menu-item">
+            <div class="sp">
+              <h2>Roasted Butternut Squash</h2>
+              <p>
+                Butternut Squash, Olive Oil, Maple Syrup, Cinnamon, Salt, Pepper
+              </p>
+            </div>
+            <h2>$12.50</h2>
+          </div>
+
+          <div class="menu-item">
+            <div class="sp">
+              <h2>Crumbled Sausage</h2>
+              <p>
+                Italian Sausage, Bell Peppers, Onion, Garlic, Olive Oil, Italian
+                Seasoning, Salt, Pepper
+              </p>
+            </div>
+            <h2>$12.50</h2>
+          </div>
+
+          <div class="menu-item">
+            <div class="sp">
+              <h2>Vegetable Sauté</h2>
+              <p>
+                Assorted Vegetables (such as zucchini, bell peppers, carrots,
+                broccoli, etc.), Olive Oil, Garlic, Italian Seasoning, Salt,
+                Pepper
+              </p>
+            </div>
+            <h2>$12.50</h2>
+          </div>
+        </div>
+      </section>
+
+      <section id="promo">
+        <h1>Six Tasty Lunches for $9</h1>
+
+        <div class="promo-ad">
+          <div class="promo-item">
+            <img src="images/dumplings.png" alt="dumplings icon" />
+            <div>
+              <h4>Arancini</h4>
+              <p>Arborio rice, mozzarella cheese, breadcrums, marinara sauce</p>
+            </div>
+          </div>
+          <hr />
+          <div class="promo-item">
+            <img src="images/noodles.png" alt="dumplings icon" />
+            <div>
+              <h4>Spaghetti Aglio e Olio Bites</h4>
+              <p>Spaghetti, garlic, olive oil, red pepper flakes</p>
+            </div>
+          </div>
+          <hr />
+          <div class="promo-item">
+            <img src="images/strawberry-waffles.png" alt="dumplings icon" />
+            <div>
+              <h4>Strawberry Crostini</h4>
+              <p>Waffle, mascarpone cheese, strawberries, balsamic glaze</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="promo-ad">
+          <div class="promo-item">
+            <img src="images/garlic-bread.png" alt="dumplings icon" />
+            <div>
+              <h4>Caprese Sandwich Bites</h4>
+              <p>Biabatta bread, mozzarella, tomatoes, basil</p>
+            </div>
+          </div>
+          <hr />
+          <div class="promo-item">
+            <img src="images/cheese-fillings.png" alt="dumplings icon" />
+            <div>
+              <h4>Ricotta Stuffed Mushrooms</h4>
+              <p>Mushrooms, ricotta cheese, parmesan cheese, herbs</p>
+            </div>
+          </div>
+          <hr />
+          <div class="promo-item">
+            <img src="images/pizza2.png" alt="dumplings icon" />
+            <div>
+              <h4>Margherita Pizza Rolls</h4>
+              <p>Tomatoes, basil, mozzarella, marinara sauce</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <h1>Call for All Large Reservations</h1>
+      <h2>+123-456-1010</h2>
+      <h4>Grigorașcu Andrei-Antonio</h4>
+      <div id="google_translate_element"></div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+      function googleTranslateElementInit(){
+        new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+        );
+      }
+    </script>
+    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </body>
+</html>

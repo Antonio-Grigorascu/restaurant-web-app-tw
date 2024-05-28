@@ -4,7 +4,7 @@
     <title>Reservation</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="styles.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,8 +17,17 @@
 </head>
 <body>
 <header>
-    <img src="logo.png" alt="logo" id="logo" />
+    <img src="images/logo.png" alt="logo" id="logo" />
     <div class="left-container">
+        <div class="log">
+            <div class="login-link" style="display: block;">
+                <a href="login.html">Login</a>
+            </div>
+
+            <div class="logout-link" style="display: block;">
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
         <nav>
             <ul class="sidebar">
                 <li onClick="hideSidebar()">
@@ -158,15 +167,16 @@
         <div id="reservation-message"></div>
         <button id="clear-reservation">Clear Reservation</button>
     </div>
+
 </main>
 
 <footer>
-    <h1>Call for All Your Reservations</h1>
+    <h1>Call for All Large Reservations</h1>
     <h2>+123-456-1010</h2>
     <h4>Grigorașcu Andrei-Antonio</h4>
     <div id="google_translate_element"></div>
 </footer>
-<script src="main.js"></script>
+<script src="js/main.js"></script>
 <script>
     function googleTranslateElementInit(){
         new google.translate.TranslateElement(

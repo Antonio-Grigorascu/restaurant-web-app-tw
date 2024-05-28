@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  <head>
+    <title>Fresco</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <img src="images/logo.png" alt="logo" id="logo" />
+      <div class="left-container">
+        <div class="log">
+          <div class="login-link" style="display: block;">
+            <a href="login.html">Login</a>
+          </div>
+
+          <div class="logout-link" style="display: block;">
+            <a href="/logout">Logout</a>
+          </div>
+        </div>
+
+        <nav>
+          <ul class="sidebar">
+            <li onClick="hideSidebar()">
+              <a
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24"
+                  viewBox="0 -960 960 960"
+                  width="24"
+                >
+                  <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                  /></svg
+              ></a>
+            </li>
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <ul>
+            <li class="hide"><a href="index.html" id="home-link" >Home</a></li>
+            <li class="hide"><a href="menu.html">Menu</a></li>
+            <li class="hide"><a href="contact.html">Contact</a></li>
+            <!-- Menu Icon -->
+            <li class="show" onClick="showSidebar()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 -960 960 960"
+                width="24"
+              >
+                <path
+                  d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+                />
+              </svg>
+            </li>
+          </ul>
+        </nav>
+        <a href="reservation.html" id="reservation-button" >Reservation</a>
+      </div>
+    </header>
+
+    <main>
+      <div id="home">
+        <div id="fork">
+          <img src="images/fork.png" alt="fork" />
+        </div>
+        <div id="title">
+          <img src="images/thing.png" alt="This is some shape idk" />
+          <h1>Fresco.</h1>
+          <h2>Italian Specialities</h2>
+          <div class="last-row-container">
+            <hr />
+            <h3>Good Food | Good wine</h3>
+            <hr />
+          </div>
+        </div>
+        <aside id="knife">
+          <img src="images/knife.png" alt="knife" />
+        </aside>
+      </div>
+
+      <section id="welcome">
+        <aside>
+          <div class="title-reverse">
+            <h1>Welcome</h1>
+            <h3>Country's Most Loved!</h3>
+          </div>
+
+          <h2>We Are Locally Crafted Food & Wine Serving Since 1978.</h2>
+          <p>
+            From our kitchen to your table, savor the flavors of tradition and
+            the essence of our community.
+          </p>
+          
+            <a href="contact.html">More About Us &rarr;</a>
+
+          <!-- rarr = right arrow -->
+        </aside>
+        <aside>
+          <img src="images/pizza.png" alt="pizza" />
+        </aside>
+        <aside>
+          <img src="images/hours.png" alt="hours" />
+        </aside>
+        <div class="hours">
+          <h1>Hours</h1>
+          <p class="hours-text">Monday - Saturday | 9AM - 1PM</p>
+          <p class="hours-text">Saturday - Sunday | 9AM - 4AM</p>
+        </div>
+      </section>
+
+      <section id="menu-presentation">
+        <img src="images/twig.png" alt="twig" />
+        <div class="text-container">
+          <h1>Our Menu</h1>
+          <h2>Quality Ingredients, Tasty Meals</h2>
+          <p>
+            From our aromatic pasta dishes to our sizzling wood-fired pizzas,
+            every bite is a journey through the vibrant tastes of Italy.
+          </p>
+        </div>
+        <div class="empty-div"></div>
+      </section>
+
+      <section id="menu-grid">
+        <div class="grid">
+          <div class="price">
+            <h2>Ham and Fontina​</h2>
+            <p>Roasted eggplant spread, marinated tomatoes.</p>
+            <hr />
+            <h2>$29.5</h2>
+            <hr />
+          </div>
+          <div><img src="images/grid1.png" alt="burger" /></div>
+          <div class="price">
+            <h2>Chicken Italiano​</h2>
+            <p>Tristique perferen possimus neque fermentum vel.</p>
+            <hr />
+            <h2>$11</h2>
+            <hr />
+          </div>
+          <div><img src="images/grid2.png" alt="shrimp salad" /></div>
+          <div class="price">
+            <h2>Spaghetti Delle​</h2>
+            <p>Rustic baguette toasted with herb-garlic butter & parmesan.</p>
+            <hr />
+            <h2>$28</h2>
+            <hr />
+          </div>
+          <div><img src="images/grid3.png" alt="chicken salad" /></div>
+          <div class="price">
+            <h2>Crumbled Sausage​</h2>
+            <p>
+              Natural unpressed ham, fontina, provolone, aioli, fresh tomato
+            </p>
+            <hr />
+            <h2>$12.5</h2>
+            <hr />
+          </div>
+          <div><img src="images/grid4.png" alt="pizza" /></div>
+          <div class="price">
+            <h2>Baked Meatballs​</h2>
+            <p>
+              Our handmade meatballs baked in savory marinara with melted
+              cheese.
+            </p>
+            <hr />
+            <h2>$32.5</h2>
+            <hr />
+          </div>
+        </div>
+
+          <a href="menu.html">Discover Entire Menu &rarr;</a>
+
+      </section>
+
+      <section id="reviews">
+        <div class="rev-left">
+          <img src="images/twig.png" alt="twig" />
+
+          <h1>Happy Customers!</h1>
+        </div>
+
+        <div class="people-rev">
+          <div class="rev">
+            <img src="images/smith.png" alt="happy customer" />
+            <h2>
+              "Mamma Mia! This place took me straight to the streets of Naples
+              with every bite. The pasta was so fresh, I could almost hear it
+              singing 'That's Amore.' The ambiance was cozy and inviting, like
+              Nonna's kitchen on a Sunday afternoon. 10/10 would recommend for a
+              taste of Italy right in our neighborhood!"
+            </h2>
+            <p>- Shamika Smith</p>
+          </div>
+
+          <div class="rev">
+            <img src="images/hatts.png" alt="happy customer" />
+            <h2>
+              "Bellissimo! I felt like I was transported to a small trattoria in
+              Tuscany. The gnocchi melted in my mouth like clouds, and the
+              tiramisu was a heavenly dream. The staff was friendly and
+              attentive, making us feel like part of the famiglia. Grazie mille
+              for the unforgettable meal!"
+            </h2>
+            <p>- Jose Hatts</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <h1>Call for All Large Reservations</h1>
+      <h2>+123-456-1010</h2>
+      <h4>Grigorașcu Andrei-Antonio</h4>
+      <div id="google_translate_element"></div>
+    </footer>
+    <script src="js/main.js"></script>
+
+    <script>
+      function googleTranslateElementInit(){
+        new google.translate.TranslateElement(
+          {pageLanguage: 'en'},
+          'google_translate_element'
+        );
+      }
+    </script>
+    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </body>
+</html>
