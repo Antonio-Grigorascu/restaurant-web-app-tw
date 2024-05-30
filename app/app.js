@@ -10,7 +10,7 @@ var express = require('express');
 
 var app = express();
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -20,6 +20,8 @@ app.get('/', function(req,res){
     res.render('pages/log');
 });
 
+
+
 app.use(session({
     secret: 'abcdefg', // pentru criptarea session ID-ului
     resave: true, // să nu șteargă sesiunile idle
@@ -27,11 +29,10 @@ app.use(session({
     // nu salvează obiectul sesiune dacă nu am setat niciun câmp
 }));
 
+
 app.use(express.json());
 
-// Middleware pentru parsarea datelor din formular
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -117,6 +118,20 @@ app.post('/reserve', async (req, res) => {
     }
 });
 
+app.get('/occupiedTablesData', (req, res) => {
+    console.log('Received request for occupiedTablesData'); // Verificare cerere primită
+    fs.readFile('reservations.json', (err, data) => {
+        if (err) {
+            res.status(500).json({ error: 'Error reading reservations file' });
+            return;
+        }
+        const reservations = JSON.parse(data);
+        const occupiedTables = reservations.map(reservation => reservation.table_id);
+        res.json({ occupiedTables });
+    });
+});
+
+
 ////////////////////////////////////////////////////////////////////////////////
 // EMAIL SENDER
 // var transporter = nodemailer.createTransport({
@@ -163,25 +178,31 @@ function verifica(s1,s2){
     return false;
 }
 
-function readReservationsFromFile(callback) {
-    fs.readFile('reservations.json', (err, data) => {
-        if (err) {
-            console.error('Error reading reservations file:', err);
-            callback([]);
-        } else {
-            callback(JSON.parse(data));
-        }
-    });
+async function readReservationsFromFile() {
+    const filePath = path.join(__dirname, 'reservations.json');
+    const data = await fs.promises.readFile(filePath, 'utf8');
+    if (data) {
+        return JSON.parse(data);
+    } else {
+        return []; // Return an empty array if the file is empty
+    }
 }
 
-function writeReservationToFile(reservation, callback) {
-    readReservationsFromFile((reservations) => {
-        reservations.push(reservation);
-        fs.writeFile('reservations.json', JSON.stringify(reservations), (err) => {
-            if (err) {
-                console.error('Error writing reservations file:', err);
+function printReservedTables(filePath) {
+    fs.promises.readFile(filePath, 'utf8')
+        .then(data => {
+            if (data) {
+                const reservations = JSON.parse(data);
+                const reservedTables = reservations.map(reservation => reservation.table_id); // Assuming "table_id" holds the table number
+                console.log('Reserved tables:', reservedTables.join(', '));
+            } else {
+                console.log('No reservations found.');
             }
-            callback();
+        })
+        .catch(error => {
+            console.error('Error reading reservations file:', error);
         });
-    });
 }
+
+
+printReservedTables('reservations.json');

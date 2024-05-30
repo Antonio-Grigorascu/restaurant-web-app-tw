@@ -20,6 +20,13 @@ document.addEventListener("DOMContentLoaded", function() {
     tables.forEach(table => {
         table.addEventListener('click', function() {
 
+            const rect = this.querySelector('rect');
+            const fillAttribute = rect.getAttribute('fill');
+            if (fillAttribute === '#b23a48') {
+                alert('This table is reserved.');
+                return;
+            }
+
             tables.forEach(t => t.classList.remove('selected'));
             this.classList.add('selected');
             tableIdInput.value = this.classList[1].substring(1);
@@ -83,6 +90,12 @@ function validateForm() {
 
     if (inputDate < currentDate) {
         alert('Please enter a date that is today or in the future.');
+        return false;
+    }
+
+    const selectedTable = document.querySelector('.table.selected');
+    if (selectedTable && selectedTable.classList.contains('reserved')) {
+        alert('This table is already reserved.');
         return false;
     }
 
@@ -187,4 +200,20 @@ function reservationConfirmation(){
 }
 
 setInterval(reservationConfirmation, 60 * 60 * 1000);
+
+fetch('/occupiedTablesData')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Received occupiedTables data:', data);
+        const occupiedTableIds = data.occupiedTables;
+        occupiedTableIds.forEach(tableId => {
+            const rect = document.getElementById(`t${tableId}`);
+            if (rect) {
+                rect.setAttribute('fill', '#b23a48');
+            }
+        });
+    })
+    .catch(error => console.error('Error fetching occupied tables data:', error));
+
+
 
