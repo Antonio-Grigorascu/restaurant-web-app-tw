@@ -1597,3 +1597,13 @@ small.guest-note {
     margin: 0;
 }
 
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100px;
+    background-color: black;
+    border-radius: 10%;
+    z-index: 1;
+}

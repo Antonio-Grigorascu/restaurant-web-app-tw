@@ -49,6 +49,9 @@ document.addEventListener("DOMContentLoaded", function() {
         hideClearButtonAndMessage();
     }
 
+
+
+
 });
 
 function validateForm() {
@@ -204,7 +207,6 @@ setInterval(reservationConfirmation, 60 * 60 * 1000);
 fetch('/occupiedTablesData')
     .then(response => response.json())
     .then(data => {
-        console.log('Received occupiedTables data:', data);
         const occupiedTableIds = data.occupiedTables;
         occupiedTableIds.forEach(tableId => {
             const rect = document.getElementById(`t${tableId}`);
@@ -215,5 +217,40 @@ fetch('/occupiedTablesData')
     })
     .catch(error => console.error('Error fetching occupied tables data:', error));
 
+function updateDigitalClock() {
+    var now = new Date();
+    var hours = now.getHours().toString().padStart(2, '0');
+    var minutes = now.getMinutes().toString().padStart(2, '0');
+    var seconds = now.getSeconds().toString().padStart(2, '0');
 
 
+    var digitalClock = document.getElementById('digital-clock');
+    digitalClock.textContent = `${hours}:${minutes}:${seconds}`;
+
+    var isDayTime = now.getHours() >= 6 && now.getHours() < 18;
+
+    var digitalClockStyle = window.getComputedStyle(digitalClock);
+    var clockContainer = document.querySelector('.clock-container');
+
+
+
+    if (isDayTime) {
+        digitalClock.style.color = 'black'; // Ziua
+    }
+    else {
+        digitalClock.style.color = 'white'; // Noaptea
+    }
+
+    if (digitalClockStyle.color === 'black'){
+        clockContainer.style.backgroundColor = 'white';
+    }
+    else{
+        clockContainer.style.backgroundColor = 'black';
+    }
+
+}
+
+
+setInterval(updateDigitalClock, 1000);
+
+updateDigitalClock();
