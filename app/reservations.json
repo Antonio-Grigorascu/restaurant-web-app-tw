@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Antonio Gri",
+    "email": "a@a.com",
+    "phone": "9850708029",
+    "date": "2024-05-30",
+    "time": "21:12",
+    "guests": "2",
+    "table_id": "4"
+  },
+  {
+    "name": "Antonio Gri",
+    "email": "antonio@outlook.com",
+    "phone": "9850708029",
+    "date": "2024-05-31",
+    "time": "12:30",
+    "guests": "4",
+    "table_id": "8"
+  }
+]

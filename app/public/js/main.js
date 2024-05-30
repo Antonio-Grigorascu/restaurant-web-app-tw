@@ -20,12 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
     tables.forEach(table => {
         table.addEventListener('click', function() {
 
-            // const styles = getComputedStyle(this);
-            // if (styles.backgroundColor === '#b23a48') {
-            //     alert('This table is already reserved.');
-            //     return;
-            // }
-
             tables.forEach(t => t.classList.remove('selected'));
             this.classList.add('selected');
             tableIdInput.value = this.classList[1].substring(1);
@@ -99,8 +93,6 @@ const form = document.querySelector('form');
 
 form.addEventListener('submit', (e) => {
 
-
-
     e.preventDefault();
     const fd = new FormData(form);
 
@@ -109,6 +101,25 @@ form.addEventListener('submit', (e) => {
     localStorage.setItem('form',json);
     displayReservationMessage();
 
+    fetch('/reserve', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: json
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Reservation successful!');
+            } else {
+                alert('Reservation failed.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Reservation failed.');
+        });
 
 
 });
@@ -155,53 +166,6 @@ function hideClearButtonAndMessage() {
 
 document.addEventListener('DOMContentLoaded', displayReservationMessage);
 
-// import emailjs from 'emailjs-com';  // incercam alt modul node email
-
-//
-// function sendEmailReminder() {
-//     const storedData = localStorage.getItem('form');
-//     if (!storedData) {
-//         console.error('No reservation data found in localStorage');
-//         return;
-//     }
-//
-//     const reservation = JSON.parse(storedData);
-//
-//     const reservationTime = new Date(reservation.date + 'T' + reservation.time);
-//
-//     const reminderTime = new Date(reservationTime.getTime() - (60 * 60 * 1000));
-//
-//     const currentTime = new Date();
-//
-//
-//     if (currentTime >= reminderTime) {
-//         emailjs.init('RkPJ0GrXv8ivXgOl3');
-//
-//
-//         const templateParams = {
-//             to_name: reservation.name,
-//             to_email: reservation.email,
-//             from_name: 'Fresco',
-//             message: `Dear ${reservation.name},\n\nThis is a reminder for your reservation at our restaurant.\n\nDate: ${reservation.date}\nTime: ${reservation.time}\nTable Number: ${reservation.table_id}\n\nThank you for choosing our restaurant!\n\nBest regards,\nYour Restaurant Team`
-//         };
-//
-//
-//         emailjs.send('service_reqvcd9', 'template_sueq0ww', templateParams)
-//             .then(function(response) {
-//                 console.log('Email sent successfully!', response);
-//             })
-//             .catch(function(error) {
-//                 console.error('Failed to send email:', error);
-//             });
-//     }
-// }
-
-
-sendEmailReminder();
-
-
-setInterval(sendEmailReminder, 60 * 60 * 1000); // 60 de minute * 60 de secunde * 1000 de milisecunde
-
 
 function reservationConfirmation(){
     const storedData = localStorage.getItem('form');
@@ -224,11 +188,3 @@ function reservationConfirmation(){
 
 setInterval(reservationConfirmation, 60 * 60 * 1000);
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     const logoutLinkDiv = document.getElementById('logout-link');
-//
-//     // Verificăm dacă utilizatorul este autentificat și afișăm link-ul de logout
-//     if (isAuthenticated) {
-//         logoutLinkDiv.style.display = 'block';
-//     }
-// });

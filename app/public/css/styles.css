@@ -1484,6 +1484,10 @@ small.guest-note {
     fill: var(--select-red);
 }
 
+.reserved{
+    fill: var(--select-red);
+}
+
 @keyframes showReservationMessage {
     0% {
         opacity: 0;
@@ -1592,3 +1596,4 @@ small.guest-note {
     height: 100vh;
     margin: 0;
 }
+
