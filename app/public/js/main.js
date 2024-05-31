@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 
+
     const clearButton = document.getElementById('clear-reservation');
     clearButton.addEventListener('click', function() {
         localStorage.removeItem('form');
@@ -42,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
         hideClearButtonAndMessage();
         tables.forEach(table => table.classList.remove('reserved'));
         history.pushState({}, document.title, window.location.href); // reloads the page so the reservation-message disappears
+
     });
 
     const storedData = localStorage.getItem('form');
@@ -231,7 +233,7 @@ function updateDigitalClock() {
 
     var digitalClockStyle = window.getComputedStyle(digitalClock);
     var clockContainer = document.querySelector('.clock-container');
-
+    var clock = document.querySelector('.clock');
 
 
     if (isDayTime) {
@@ -242,10 +244,10 @@ function updateDigitalClock() {
     }
 
     if (digitalClockStyle.color === 'black'){
-        clockContainer.style.backgroundColor = 'white';
+        digitalClock.style.backgroundColor = 'white';
     }
     else{
-        clockContainer.style.backgroundColor = 'black';
+        digitalClock.style.backgroundColor = 'black';
     }
 
 }

@@ -34,13 +34,16 @@ app.post('/login', function(req, res) {
     form.parse(req, function(err, fields, files) {
         user =  verifica(fields.username, fields.parola);
         // verificarea datelor de login
+        console.log(user);
 
         if(user){
             req.session.username = user;
             // setez userul ca proprietate a sesiunii
+            console.log('Login successful for user:', user);
             res.redirect('/reservation');}
         else{
             req.session.username = false;
+            console.log('Login failed for username:', fields.username);
             res.redirect('/');
         }
 
@@ -58,7 +61,7 @@ app.get('/logat',function(req,res){
 app.get('/logout', function(req, res) {
     req.session.destroy();
     // distrugem sesiunea la intrarea pe pagina de logout
-    res.render('pages/log');
+    res.redirect('/');
 });
 
 // FISIERE HTML
@@ -223,7 +226,7 @@ function verifica(s1, s2) {
         const obj = JSON.parse(data);
 
         for (let i = 0; i < obj.length; i++) {
-            if (obj[i].username === s1 && obj[i].parola === s2) {
+            if (obj[i].username == s1 && obj[i].parola == s2) {
                 return obj[i].username;
             }
         }
