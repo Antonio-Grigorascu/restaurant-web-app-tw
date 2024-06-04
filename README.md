@@ -2,7 +2,8 @@
 Project Overview
 Welcome to the Restaurant Reservation System! This full-stack web application is designed to streamline the reservation process for restaurants, ensuring an efficient and user-friendly experience for both customers and staff. 
 
-Web Technologies Final Project - 2024 - University of the Bucharest, Computer Science
+Web Technologies Final Project - 2024  
+University of the Bucharest, Computer Science  
 Author: Andrei-Antonio Grigorașcu
 
 ## Technologies Used:
