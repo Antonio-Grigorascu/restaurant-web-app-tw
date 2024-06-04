@@ -1,4 +1,4 @@
-# Restaurant Reservation System
+# Restaurant Full-Stack Web Application
 
 
 Welcome to the Restaurant Reservation System and Presentation Website! This full-stack web application serves as a comprehensive platform designed to streamline the reservation process for restaurants while also providing a captivating presentation of the restaurant's offerings. From browsing the menu and promotions to accessing essential information about the establishment, this system ensures an efficient and user-friendly experience for both customers and staff.
