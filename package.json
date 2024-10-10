@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "all": "^0.0.0",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "formidable": "^3.5.1",
+    "fs": "^0.0.1-security",
+    "nodemailer": "^6.9.14",
+    "path": "^0.12.7"
+  }
+}
