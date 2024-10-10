@@ -1,3 +1,9 @@
-app/reservations.json
+# Ignoră node_modules
+node_modules/
 
-users.json
+# Ignoră fișierul .env (credendialele)
+.env
+
+# Ignoră fișierele JSON care conțin date sensibile
+app/reservations.json
+app/users.json
