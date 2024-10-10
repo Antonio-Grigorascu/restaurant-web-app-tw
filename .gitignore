@@ -5,5 +5,4 @@ node_modules/
 .env
 
 # Ignoră fișierele JSON care conțin date sensibile
-app/reservations.json
 app/users.json
