@@ -16,5 +16,14 @@
     "time": "21:21",
     "guests": "4",
     "table_id": "6"
+  },
+  {
+    "name": "Antonio",
+    "email": "a@a.com",
+    "phone": "9850708029",
+    "date": "2024-06-03",
+    "time": "09:16",
+    "guests": "2",
+    "table_id": "2"
   }
 ]

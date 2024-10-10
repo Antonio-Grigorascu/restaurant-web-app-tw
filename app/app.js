@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const port = 7000
 var express = require('express');
 var app = express();
+require('dotenv').config();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 app.set('view engine', 'ejs');
@@ -142,8 +143,8 @@ app.use((req, res, next) => {
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'grigorascu95antonio@gmail.com',
-        pass: 'emha zdcu vxkg lqnv'
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
     }
 });
 
@@ -266,3 +267,5 @@ function printReservedTables(filePath) {
 
 
 printReservedTables('reservations.json');
+
+
